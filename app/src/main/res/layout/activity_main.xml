@@ -16,7 +16,7 @@
         android:layout_marginEnd="@dimen/_12sdp"
         android:fontFamily="@font/roboto_bold"
         android:includeFontPadding="false"
-        android:text="@string/audibook"
+        android:text="@string/test_change"
         android:textColor="@color/White"
         android:textSize="@dimen/_20ssp"
         app:layout_constraintTop_toTopOf="parent" />

@@ -26,4 +26,5 @@
     <string name="_90_charging">90% Charging</string>
     <string name="input_here">Input here</string>
     <string name="hello">Hello</string>
+    <string name="test_change">Test Change</string>
 </resources>
