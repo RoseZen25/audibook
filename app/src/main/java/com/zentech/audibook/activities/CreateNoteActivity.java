@@ -39,6 +39,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 
+import pl.droidsonroids.gif.GifImageView;
+
 public class CreateNoteActivity extends AppCompatActivity {
 
     public static final Integer RecordAudioRequestCode = 1;
@@ -54,6 +56,8 @@ public class CreateNoteActivity extends AppCompatActivity {
     private AlertDialog dialogDeleteNote;
 
     private Note alreadyAvailableNote;
+
+    private GifImageView audioGif;
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -73,6 +77,7 @@ public class CreateNoteActivity extends AppCompatActivity {
             }
         });
 
+        audioGif = findViewById(R.id.audiogif);
         micBtn = findViewById(R.id.imageSpeak);
         inputNoteTitle = findViewById(R.id.inputNoteTitle);
         inputNoteSubtitle = findViewById(R.id.inputNoteSubtitle);
@@ -80,6 +85,8 @@ public class CreateNoteActivity extends AppCompatActivity {
         textDateTime = findViewById(R.id.textDateTime);
         viewSubtitleIndicator = findViewById(R.id.viewSubtitleIndicator);
         speechRecognizer = SpeechRecognizer.createSpeechRecognizer(this);
+
+        audioGif.setVisibility(View.INVISIBLE);
 
         textDateTime.setText(
                 new SimpleDateFormat("EEEE, dd MMMM yyyy HH:mm a", Locale.getDefault())
@@ -119,7 +126,8 @@ public class CreateNoteActivity extends AppCompatActivity {
 
             @Override
             public void onBeginningOfSpeech() {
-                inputNoteText.setHint("Listening...");
+                audioGif.setVisibility(View.VISIBLE);
+                micBtn.setVisibility(View.INVISIBLE);
             }
 
             @Override
@@ -144,6 +152,8 @@ public class CreateNoteActivity extends AppCompatActivity {
 
             @Override
             public void onResults(Bundle bundle) {
+                audioGif.setVisibility(View.INVISIBLE);
+                micBtn.setVisibility(View.VISIBLE);
                 ArrayList<String> data = bundle.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
                 inputNoteText.append(data.get(0));
                 inputNoteText.append(". ");
