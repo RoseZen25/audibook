@@ -4,8 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/acama/AndroidStudioProjects/audibook/app/src/main/res/layout/activity_create_event.xml" value="0.19791666666666666" />
-        <entry key="..\:/Users/acama/AndroidStudioProjects/audibook/app/src/main/res/layout/activity_create_note.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/acama/AndroidStudioProjects/audibook/app/src/main/res/layout/activity_main.xml" value="0.19791666666666666" />
+        <entry key="..\:/Users/acama/AndroidStudioProjects/audibook/app/src/main/res/layout/activity_create_note.xml" value="0.22" />
+        <entry key="..\:/Users/acama/AndroidStudioProjects/audibook/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/acama/AndroidStudioProjects/audibook/app/src/main/res/layout/item_container_notes.xml" value="0.22" />
       </map>
     </option>
   </component>
