@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.zentech.audibook.activities.MainActivity;
 import com.zentech.audibook.adapters.EventAdapter;
 import com.zentech.audibook.database.DatabaseClass;
 import com.zentech.audibook.database.EntityClass;
@@ -19,15 +20,24 @@ public class SchedMain extends AppCompatActivity implements View.OnClickListener
     EventAdapter eventAdapter;
     RecyclerView recyclerview;
     DatabaseClass databaseClass;
+    private ImageView button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_schedule);
         createEvent = findViewById(R.id.btn_createEvent);
-        recyclerview = findViewById(R.id.recyclerview);
+        recyclerview = findViewById(R.id.recyclerviewSched);
         createEvent.setOnClickListener(this);
         databaseClass = DatabaseClass.getDatabase(getApplicationContext());
+
+        button = (ImageView) findViewById(R.id.HomeSched);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openMainActivity();
+            }
+        });
     }
 
     @Override
@@ -54,4 +64,9 @@ public class SchedMain extends AppCompatActivity implements View.OnClickListener
         Intent intent = new Intent(getApplicationContext(), CreateEvent.class);
         startActivity(intent);
     }
+    public  void openMainActivity(){
+        Intent intent =new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
 }
