@@ -6,59 +6,52 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/Primary"
     tools:context=".activities.MainActivity">
-    
-    <TextView
-        android:id="@+id/textMyNotes"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_12sdp"
-        android:layout_marginTop="@dimen/_20sdp"
-        android:layout_marginEnd="@dimen/_12sdp"
-        android:fontFamily="@font/roboto_bold"
-        android:includeFontPadding="false"
-        android:text="@string/your_mom"
-        android:textColor="@color/White"
-        android:textSize="@dimen/_20ssp"
-        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/appBar"
+        layout="@layout/app_bar"/>
+
 
     <LinearLayout
         android:id="@+id/layoutSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_8sdp"
-        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_5sdp"
         android:layout_marginEnd="@dimen/_8sdp"
-        android:background="@drawable/bg_search"
+        android:paddingTop="@dimen/_2sdp"
+        android:background="@drawable/background_searchbar_rounded"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingStart="@dimen/_10sdp"
         android:paddingEnd="@dimen/_10sdp"
-        app:layout_constraintTop_toBottomOf="@id/textMyNotes">
+        app:layout_constraintTop_toBottomOf="@id/appBar">
 
-            <ImageView
-                android:layout_width="@dimen/_20sdp"
-                android:layout_height="@dimen/_20sdp"
-                android:contentDescription="@string/app_name"
-                android:src="@drawable/ic_search"
-                app:tint="@color/SearchIcon" />
+        <ImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_search"
+            app:tint="@color/SearchIcon" />
 
         <EditText
-                android:id="@+id/inputSearch"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_35sdp"
-                android:layout_marginStart="@dimen/_12sdp"
-                android:background="@null"
-                android:fontFamily="@font/roboto_regular"
-                android:hint="@string/search_notes"
-                android:imeOptions="actionDone"
-                android:importantForAutofill="no"
-                android:includeFontPadding="false"
-                android:inputType="text"
-                android:textColor="@color/White"
-                android:textColorHint="@color/TextHint"
-                android:textSize="@dimen/_13ssp"/>
+            android:id="@+id/inputSearch"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:background="@null"
+            android:fontFamily="@font/roboto_regular"
+            android:hint="@string/search_notes"
+            android:imeOptions="actionDone"
+            android:importantForAutofill="no"
+            android:includeFontPadding="false"
+            android:inputType="text"
+            android:textColor="@color/White"
+            android:textColorHint="@color/TextHint"
+            android:textSize="@dimen/_13ssp"
+            tools:ignore="TouchTargetSizeCheck" />
     </LinearLayout>
-    
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/NotesRecyclerView"
         android:layout_width="match_parent"
@@ -72,56 +65,57 @@
         app:layout_constraintBottom_toTopOf="@id/layoutQuickActions"
         app:layout_constraintTop_toBottomOf="@id/layoutSearch"
         />
-    
+
     <LinearLayout
         android:id="@+id/layoutQuickActions"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/QuickActionBG"
-        android:gravity="center_vertical"
+        android:layout_width="269dp"
+        android:layout_height="57dp"
+        android:background="@drawable/background_navigation_bar"
+
+        android:isScrollContainer="false"
         android:orientation="horizontal"
-        android:padding="@dimen/_15sdp"
-        app:layout_constraintBottom_toBottomOf="parent">
+        android:paddingTop="@dimen/_7sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
             android:id="@+id/Home"
-            android:layout_width="@dimen/_23sdp"
-            android:layout_height="@dimen/_23sdp"
-            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:background="@drawable/background_nav_button"
             android:contentDescription="@string/app_name"
+            android:elevation="@dimen/_10sdp"
+            android:enabled="false"
             android:src="@drawable/ic_home"
-            app:tint="@color/Icons" />
+            app:tint="@color/black" />
 
         <ImageView
             android:id="@+id/Schedule"
-            android:layout_width="@dimen/_23sdp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_35sdp"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_sched"
-            app:tint="@color/Icons" />
-        <ImageView
-            android:id="@+id/Folder"
-            android:layout_width="@dimen/_23sdp"
-            android:layout_height="@dimen/_23sdp"
-            android:layout_marginStart="@dimen/_15sdp"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_folder"
-            app:tint="@color/Icons" />
+            android:src="@drawable/ic_round_calendar_today_24"
+            app:tint="@color/NoteColor5" />
+
     </LinearLayout>
 
     <ImageView
         android:id="@+id/imageAddNoteMain"
-        android:layout_width="@dimen/_40sdp"
-        android:layout_height="@dimen/_40sdp"
-        android:layout_marginEnd="@dimen/_30sdp"
+        android:layout_width="@dimen/_35sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginBottom="35dp"
         android:background="@drawable/bg_add_btn"
         android:contentDescription="@string/app_name"
         android:padding="@dimen/_5sdp"
         android:src="@drawable/ic_add"
-        app:layout_constraintBottom_toTopOf="@id/layoutQuickActions"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/layoutQuickActions"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="parent"
         app:tint="@color/Primary" />
-    
+
 </androidx.constraintlayout.widget.ConstraintLayout>

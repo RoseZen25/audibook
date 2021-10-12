@@ -23,4 +23,5 @@
     <color name="NoteColor5">#000000</color>
     <color name="Delete">#FF4842</color>
     <color name="SearchBG">#333333</color>
+    <color name="NavGrey">#444444</color>
 </resources>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,24 +8,61 @@
     android:background="@color/Primary">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerviewSched"
         android:layout_width="match_parent"
-        android:id="@+id/recyclerview"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    <LinearLayout
+        android:id="@+id/layoutQuickActions"
+        android:layout_width="269dp"
+        android:layout_height="57dp"
+        android:background="@drawable/background_navigation_bar"
+
+        android:isScrollContainer="false"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/_7sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/HomeSched"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:contentDescription="@string/app_name"
+            android:elevation="@dimen/_10sdp"
+            android:enabled="false"
+            android:src="@drawable/ic_home"
+            app:tint="@color/black" />
+
+        <ImageView
+            android:id="@+id/ScheduleSched"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_35sdp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_round_calendar_today_24"
+            android:background="@drawable/background_nav_button"
+            android:padding="@dimen/_1sdp"
+            app:tint="@color/NoteColor5"/>
+    </LinearLayout>
+
     <ImageView
         android:id="@+id/btn_createEvent"
-        android:layout_width="@dimen/_40sdp"
-        android:layout_height="@dimen/_40sdp"
-        android:layout_marginEnd="@dimen/_10sdp"
-        android:padding="@dimen/_5sdp"
-        android:layout_marginBottom="@dimen/_12sdp"
+        android:layout_width="@dimen/_35sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginBottom="35dp"
         android:background="@drawable/bg_add_btn"
-        android:src="@drawable/ic_add"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:backgroundTint="@color/Accent"
-        android:textColor="@color/White"
-        app:tint="@color/Primary"
-        />
+        android:contentDescription="@string/app_name"
+        android:padding="@dimen/_5sdp"
+        android:src="@drawable/ic_add_sched"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="@color/Primary" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
