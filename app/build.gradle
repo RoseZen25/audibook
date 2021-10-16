@@ -57,4 +57,7 @@ dependencies {
 
     //Rounded Imageview
     implementation "com.makeramen:roundedimageview:2.3.0"
+
+    //for PDF
+    implementation 'com.itextpdf:itextg:5.5.10'
 }

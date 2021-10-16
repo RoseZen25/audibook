@@ -45,6 +45,19 @@
                 app:layout_constraintBottom_toBottomOf="@id/imageBack"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@id/imageBack"/>
+            <ImageView
+                android:id="@+id/imagePDF"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:background="@drawable/bg_done_btn"
+                android:layout_marginEnd="@dimen/_30sdp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/bg_pdf"
+                android:padding="@dimen/_4sdp"
+                app:tint="@color/NoteColor3"
+                app:layout_constraintBottom_toBottomOf="@id/imageBack"
+                app:layout_constraintEnd_toEndOf="@id/imageDone"
+                app:layout_constraintTop_toTopOf="@id/imageBack"/>
             
             <EditText
                 android:id="@+id/inputNoteTitle"
