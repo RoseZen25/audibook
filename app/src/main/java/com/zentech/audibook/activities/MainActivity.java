@@ -105,6 +105,7 @@ public class MainActivity extends AppCompatActivity implements NoteListener {
     private void openSchedule() {
         Intent intent = new Intent(this, SchedMain.class);
         startActivity(intent);
+        overridePendingTransition(0, 0);
     }
     
 

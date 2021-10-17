@@ -37,9 +37,10 @@
                 android:layout_width="@dimen/_20sdp"
                 android:layout_height="@dimen/_20sdp"
                 android:background="@drawable/bg_done_btn"
+                android:src="@drawable/ic_done"
                 android:layout_marginEnd="@dimen/_12sdp"
                 android:contentDescription="@string/app_name"
-                android:src="@drawable/ic_done"
+
                 android:padding="@dimen/_4sdp"
                 app:tint="@color/Icons"
                 app:layout_constraintBottom_toBottomOf="@id/imageBack"

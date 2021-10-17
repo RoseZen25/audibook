@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
@@ -15,9 +16,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Audibook">
-        <activity android:name=".SchedMain"/>
-        <activity android:name=".NotificationMessage"/>
-        <activity android:name=".CreateEvent"/>
+        <activity
+            android:name=".ui.AlarmLandingPageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.AddEditAlarmActivity"
+            android:theme="@style/AppTheme"
+            android:exported="false" />
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="false" />
+        <activity android:name=".SchedMain"
+            android:theme="@style/Theme.Audibook"/>
+        <activity android:name=".NotificationMessage" />
+        <activity android:name=".CreateEvent" />
         <activity android:name=".activities.SpeechToText" />
         <activity
             android:name=".activities.CreateNoteActivity"
@@ -33,15 +45,35 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name=".service.LoadAlarmsService" />
+
+        <receiver android:name=".service.LoadAlarmsReceiver" />
+
+        <receiver android:name=".service.AlarmReceiver" />
+
+        <receiver
+            android:name=".service.BootReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="${bootPriority}">
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
         <receiver
             android:name=".BootUpReceiver"
             android:enabled="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
         <receiver android:name=".AlarmBrodcast" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

@@ -6,13 +6,47 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".SchedMain"
     android:background="@color/Primary">
+    <include
+        android:id="@+id/appBar"
+        layout="@layout/app_bar"/>
+    <fragment
+        android:id="@+id/main_fragment"
+        android:name="com.zentech.audibook.ui.MainFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="10dp"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        app:layout_constraintTop_toBottomOf="@id/textView"
+        app:layout_constraintBottom_toTopOf="@id/layoutQuickActions"
+        tools:context="com.zentech.audibook.SchedMain" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerviewSched"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:visibility="gone"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="25dp"
+        android:backgroundTint="@color/Accent"
+        app:borderWidth="3.5dp"
+        app:backgroundTint="@color/black"
+        app:fabSize="normal"
+        android:layout_marginStart="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_add_sched" />
     <LinearLayout
         android:id="@+id/layoutQuickActions"
         android:layout_width="269dp"
@@ -22,6 +56,7 @@
         android:isScrollContainer="false"
         android:orientation="horizontal"
         android:paddingTop="@dimen/_7sdp"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -43,11 +78,11 @@
             android:layout_width="@dimen/_40sdp"
             android:layout_height="@dimen/_30sdp"
             android:layout_marginStart="@dimen/_35sdp"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_round_calendar_today_24"
             android:background="@drawable/background_nav_button"
+            android:contentDescription="@string/app_name"
             android:padding="@dimen/_1sdp"
-            app:tint="@color/NoteColor5"/>
+            android:src="@drawable/ic_round_calendar_today_24"
+            app:tint="@color/NoteColor5" />
     </LinearLayout>
 
     <ImageView
@@ -59,10 +94,19 @@
         android:contentDescription="@string/app_name"
         android:padding="@dimen/_5sdp"
         android:src="@drawable/ic_add_sched"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.54"
         app:layout_constraintStart_toStartOf="parent"
         app:tint="@color/Primary" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="  (edit)Scheduler"
+        android:textColor="@color/White"
+        app:layout_constraintTop_toBottomOf="@id/appBar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
