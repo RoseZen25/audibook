@@ -90,7 +90,7 @@ public class CreateNoteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_create_note);
         
         //////////////////pdf////////////////////
-        generatePDF = (ImageView) findViewById(R.id.imagePDF);
+        generatePDF = findViewById(R.id.imagePDF);
         generatePDF.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -501,7 +501,7 @@ public class CreateNoteActivity extends AppCompatActivity {
                     layoutMiscellaneous.findViewById(R.id.viewColor5).performClick();
                     break;
             }
-        };
+        }
 
         if(alreadyAvailableNote != null){
             layoutMiscellaneous.findViewById(R.id.layoutDeleteNote).setVisibility(View.VISIBLE);
