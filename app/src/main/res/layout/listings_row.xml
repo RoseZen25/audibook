@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:background="@drawable/bg_search"
     android:id="@+id/toplayout"
-    android:backgroundTint="@color/NoteColor2"
+    android:backgroundTint="@color/Primary"
     android:layout_marginEnd="@dimen/_10sdp"
     android:layout_marginStart="@dimen/_10sdp"
     >
