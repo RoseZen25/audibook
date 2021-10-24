@@ -59,7 +59,7 @@ public final class AlarmReceiver extends BroadcastReceiver {
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID);
         builder.setSmallIcon(R.drawable.ic_alarm_white_24dp);
-        builder.setColor(ContextCompat.getColor(context, R.color.accent));
+        builder.setColor(ContextCompat.getColor(context, R.color.Accent));
         builder.setContentTitle(context.getString(R.string.app_name));
         builder.setContentText(alarm.getLabel());
         builder.setTicker(alarm.getLabel());
@@ -191,7 +191,6 @@ public final class AlarmReceiver extends BroadcastReceiver {
     }
 
     private static void createNotificationChannel(Context ctx) {
-        if(SDK_INT < O) return;
 
         final NotificationManager mgr = ctx.getSystemService(NotificationManager.class);
         if(mgr == null) return;
@@ -233,13 +232,7 @@ public final class AlarmReceiver extends BroadcastReceiver {
         }
 
         void schedule(Alarm alarm, PendingIntent pi) {
-            if(SDK_INT > LOLLIPOP) {
-                am.setAlarmClock(new AlarmManager.AlarmClockInfo(alarm.getTime(), launchAlarmLandingPage(ctx, alarm)), pi);
-            } else if(SDK_INT > KITKAT) {
-                am.setExact(AlarmManager.RTC_WAKEUP, alarm.getTime(), pi);
-            } else {
-                am.set(AlarmManager.RTC_WAKEUP, alarm.getTime(), pi);
-            }
+            am.setAlarmClock(new AlarmManager.AlarmClockInfo(alarm.getTime(), launchAlarmLandingPage(ctx, alarm)), pi);
         }
 
     }

@@ -2,6 +2,7 @@ package com.zentech.audibook.ui;
 
 import static android.content.Context.VIBRATOR_SERVICE;
 
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.hardware.Sensor;
@@ -15,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -51,10 +53,12 @@ public final class AlarmLandingPageFragment extends Fragment implements SensorEv
         accelerormeterSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         final Button launchMainActivityBtn = (Button) v.findViewById(R.id.load_main_activity_btn);
         final Button dismiss = (Button) v.findViewById(R.id.dismiss_btn);
+        final TextView alarmTitle = (TextView) v.findViewById(R.id.alarmTitle);
         launchMainActivityBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getContext(), MainActivity.class));
+                Bundle bundle = ActivityOptions.makeCustomAnimation(getContext(), R.anim.nav_default_enter_anim, R.anim.nav_default_exit_anim).toBundle();
+                startActivity(new Intent(getContext(), com.zentech.audibook.activities.MainActivity.class), bundle);
                 vibrator.cancel();
                 getActivity().finish();
             }
