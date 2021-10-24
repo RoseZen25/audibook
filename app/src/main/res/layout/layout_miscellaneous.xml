@@ -10,22 +10,57 @@
     app:behavior_peekHeight="@dimen/_40sdp"
     app:layout_behavior="@string/bottom_sheet_behavior">
 
-    <TextView
-        android:id="@+id/textMiscellaneous"
+    <LinearLayout
+        android:id="@+id/layoutQuickMisc"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_40sdp"
-        android:fontFamily="@font/roboto_medium"
-        android:gravity="center"
-        android:includeFontPadding="false"
-        android:text="@string/miscellaneous"
-        android:textColor="@color/White"
-        android:textSize="@dimen/_13ssp"/>
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+            <View
+                android:id="@+id/ColorPicker"
+                android:layout_marginStart="@dimen/_50sdp"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:background="@drawable/background_note_color_1"/>
+
+        <ImageView
+            android:id="@+id/imagePDF"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_50sdp"
+            android:contentDescription="@string/app_name"
+            android:padding="@dimen/_4sdp"
+            android:src="@drawable/bg_pdf"
+            app:layout_constraintStart_toEndOf="@id/ColorPicker"
+            app:tint="@color/White" />
+
+
+        <ImageView
+            android:id="@+id/imageDeleteNote"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginStart="@dimen/_50sdp"
+            android:contentDescription="@string/app_name"
+            android:padding="@dimen/_4sdp"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:src="@drawable/ic_delete"
+            app:tint="@color/NoteColor3"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/layoutNoteColor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 

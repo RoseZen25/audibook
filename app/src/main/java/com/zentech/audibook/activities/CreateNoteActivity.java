@@ -158,7 +158,6 @@ public class CreateNoteActivity extends AppCompatActivity {
 
         initMiscellaneous();
         setSubtitleIndicatorColor();
-
         final Intent speechRecognizerIntent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         speechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
         speechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
@@ -406,7 +405,7 @@ public class CreateNoteActivity extends AppCompatActivity {
     private void initMiscellaneous(){
         final LinearLayout layoutMiscellaneous = findViewById(R.id.layoutMiscellaneous);
         final BottomSheetBehavior bottomSheetBehavior = BottomSheetBehavior.from(layoutMiscellaneous);
-        layoutMiscellaneous.findViewById(R.id.textMiscellaneous).setOnClickListener(new View.OnClickListener() {
+        layoutMiscellaneous.findViewById(R.id.ColorPicker).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (bottomSheetBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED){
@@ -416,7 +415,6 @@ public class CreateNoteActivity extends AppCompatActivity {
                 }
             }
         });
-
         final ImageView imageColor1 = layoutMiscellaneous.findViewById(R.id.imageColor1);
         final ImageView imageColor2 = layoutMiscellaneous.findViewById(R.id.imageColor2);
         final ImageView imageColor3 = layoutMiscellaneous.findViewById(R.id.imageColor3);
@@ -504,8 +502,8 @@ public class CreateNoteActivity extends AppCompatActivity {
         }
 
         if(alreadyAvailableNote != null){
-            layoutMiscellaneous.findViewById(R.id.layoutDeleteNote).setVisibility(View.VISIBLE);
-            layoutMiscellaneous.findViewById(R.id.layoutDeleteNote).setOnClickListener(new View.OnClickListener() {
+
+            layoutMiscellaneous.findViewById(R.id.imageDeleteNote).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
@@ -575,4 +573,5 @@ public class CreateNoteActivity extends AppCompatActivity {
         GradientDrawable gradientDrawable = (GradientDrawable) viewSubtitleIndicator.getBackground();
         gradientDrawable.setColor(Color.parseColor(selectedNoteColor));
     }
+
 }

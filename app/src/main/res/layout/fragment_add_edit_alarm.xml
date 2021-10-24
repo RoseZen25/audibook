@@ -6,7 +6,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
-    android:scrollbarStyle="outsideOverlay">
+    android:scrollbarStyle="outsideOverlay"
+    android:background="@color/NavGrey">
 
     <LinearLayout
         android:orientation="vertical"
@@ -22,6 +23,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textStyle="bold"
+            android:textColor="@color/White"
             android:layout_marginBottom="12dp"
             android:text="@string/set_schedule"
             tools:text="Set Schedule"/>
@@ -38,6 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/White"
             android:layout_marginBottom="@dimen/list_padding_vertical_small"
             android:text="@string/label"
             tools:text="Reminder Title"/>
@@ -54,15 +57,17 @@
             android:layout_height="wrap_content"
             android:inputType="textCapWords"
             android:maxLength="15"
-            android:textColor="@color/secondary_text"
+            android:textColorHint="@color/White"
             android:textStyle="italic"
-            android:hint="(title)"
-            android:layout_marginBottom="@dimen/activity_vertical_margin" />
+            android:hint="@string/title"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:importantForAutofill="no" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/White"
             android:layout_marginBottom="@dimen/list_padding_vertical_small"
             android:text="@string/time"
             tools:text="Time"/>
@@ -75,6 +80,9 @@
 
         <TimePicker
             android:id="@+id/edit_alarm_time_picker"
+            android:numbersBackgroundColor="@color/White"
+            android:numbersSelectorColor="@color/White"
+            android:numbersTextColor="@color/White"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -87,7 +95,8 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_marginBottom="@dimen/list_padding_vertical_small"
-            android:text="Repeat"
+            android:textColor="@color/White"
+            android:text="@string/repeat"
             tools:text="Repeat"/>
 
         <View
@@ -112,9 +121,9 @@
                 android:background="@drawable/background_day_view"
                 android:button="@null"
                 android:gravity="center"
-                android:textSize="18dp"
+                android:textSize="@dimen/_18ssp"
                 android:textStyle="bold"
-                android:text="S" />
+                android:text="@string/s" />
 
             <com.zentech.audibook.view.DayViewCheckBox
                 android:id="@+id/edit_alarm_mon"
@@ -125,9 +134,9 @@
                 android:background="@drawable/background_day_view"
                 android:button="@null"
                 android:gravity="center"
-                android:textSize="18dp"
+                android:textSize="@dimen/_18ssp"
                 android:textStyle="bold"
-                android:text="M" />
+                android:text="@string/m" />
 
 
             <com.zentech.audibook.view.DayViewCheckBox
@@ -139,9 +148,9 @@
                 android:background="@drawable/background_day_view"
                 android:button="@null"
                 android:gravity="center"
-                android:textSize="18dp"
+                android:textSize="@dimen/_18ssp"
                 android:textStyle="bold"
-                android:text="T" />
+                android:text="@string/t" />
 
             <com.zentech.audibook.view.DayViewCheckBox
                 android:id="@+id/edit_alarm_wed"
@@ -152,9 +161,9 @@
                 android:background="@drawable/background_day_view"
                 android:button="@null"
                 android:gravity="center"
-                android:textSize="18dp"
+                android:textSize="@dimen/_18ssp"
                 android:textStyle="bold"
-                android:text="W" />
+                android:text="@string/w" />
 
             <com.zentech.audibook.view.DayViewCheckBox
                 android:id="@+id/edit_alarm_thurs"
@@ -165,9 +174,9 @@
                 android:background="@drawable/background_day_view"
                 android:button="@null"
                 android:gravity="center"
-                android:textSize="18dp"
+                android:textSize="@dimen/_18ssp"
                 android:textStyle="bold"
-                android:text="T" />
+                android:text="@string/th" />
 
             <com.zentech.audibook.view.DayViewCheckBox
                 android:id="@+id/edit_alarm_fri"
@@ -178,9 +187,9 @@
                 android:background="@drawable/background_day_view"
                 android:button="@null"
                 android:gravity="center"
-                android:textSize="18dp"
+                android:textSize="@dimen/_18ssp"
                 android:textStyle="bold"
-                android:text="F" />
+                android:text="@string/f" />
 
 
             <com.zentech.audibook.view.DayViewCheckBox
@@ -192,9 +201,9 @@
                 android:background="@drawable/background_day_view"
                 android:button="@null"
                 android:gravity="center"
-                android:textSize="18dp"
+                android:textSize="@dimen/_18ssp"
                 android:textStyle="bold"
-                android:text="S" />
+                android:text="@string/su" />
         </LinearLayout>
     </LinearLayout>
         <ImageButton

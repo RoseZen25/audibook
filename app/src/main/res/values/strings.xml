@@ -79,4 +79,16 @@
     <!-- Notification -->
     <string name="channel_name">Simple Alarms</string>
     <string name="set_schedule">Set Schedule</string>
+    <string name="repeat">Repeat</string>
+    <string name="m">M</string>
+    <string name="s">S</string>
+    <string name="t">T</string>
+    <string name="w">W</string>
+    <string name="th">Th</string>
+    <string name="f">F</string>
+    <string name="su">Su</string>
+    <string name="title">(title)</string>
+    <string name="color">color</string>
+    <string name="convert">Convert</string>
+    <string name="delete">delete</string>
 </resources>

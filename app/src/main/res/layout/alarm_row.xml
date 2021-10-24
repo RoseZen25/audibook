@@ -8,7 +8,7 @@
     android:layout_marginTop="@dimen/_10sdp"
     android:layout_marginEnd="@dimen/_10sdp"
     android:background="@drawable/bg_search"
-    android:backgroundTint="@color/NoteColor3"
+    android:backgroundTint="@color/cardview_dark_background"
     android:clickable="true"
     android:foreground="?selectableItemBackground"
     android:orientation="horizontal"
@@ -41,7 +41,7 @@
             android:alpha=".8"
             android:fontFamily="@font/roboto_medium"
             android:padding="10dp"
-            android:textColor="@color/Primary"
+            android:textColor="@color/White"
             android:textSize="14sp"
             tools:text="M Tu W Th F Sa Su" />
 
